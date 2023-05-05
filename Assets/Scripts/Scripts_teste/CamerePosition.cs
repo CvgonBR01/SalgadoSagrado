@@ -10,11 +10,11 @@ public class CamerePosition : MonoBehaviour
 
     //diferenca entre a posicao da camera e do jogador
     [SerializeField]
-    private Vector3 pos;
+    private Vector2 pos;
     
     private void Update()
     {
         //atualiza a posicao da camera
-        transform.position = player.position + pos;
+        transform.position = player.position + transform.position;
     }
 }
