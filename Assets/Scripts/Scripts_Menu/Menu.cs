@@ -9,13 +9,13 @@ public class Menu : MonoBehaviour
     
     public GameObject CreditsMenu;
     
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
-        MainmenuButton()
+        //MainmenuButton();
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
    
  public void MainMenuButton()
     {
@@ -26,20 +26,21 @@ public class Menu : MonoBehaviour
   
  public void PlayNowButton()
     {
-        Debug.Log("LOAD");
         SceneManager.LoadScene("Level1");
+         Debug.Log("LOAD");
     }
   
  public void CreditsButton()
     {
-        // Show Credits Menu
+        //Show Credits Menu
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
     }
         
  public void QuitButton()
     {
-        // Quit Game
-        Application.Quit();
+        //Quit Game
+        //Application.Quit();
+        Debug.Log("Quit");
     }
 }
