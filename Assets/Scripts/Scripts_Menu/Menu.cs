@@ -5,42 +5,55 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject MainMenu;
+    [SerializeField]
+    private GameObject MenuPrincipal;
+
+    [SerializeField]
+    private GameObject Config;
     
-    public GameObject CreditsMenu;
+    [SerializeField]
+    private GameObject Creditos;
     
     //Start is called before the first frame update
     void Start()
     {
-        //MainmenuButton();
+        MenuPrin();
     }
 
     //Update is called once per frame
    
- public void MainMenuButton()
+ public void MenuPrin()
     {
         // Show Main Menu
-        MainMenu.SetActive(true);
-        CreditsMenu.SetActive(false);
+        MenuPrincipal.SetActive(true);
+        Config.SetActive(false);
+        Creditos.SetActive(false);
     }
   
- public void PlayNowButton()
+ public void Jogar()
     {
         SceneManager.LoadScene("Level1");
          Debug.Log("LOAD");
     }
+ public void Configuracoes()
+ {
+        Config.SetActive(true);
+        MenuPrincipal.SetActive(false);
+        Creditos.SetActive(false);
+ } 
   
- public void CreditsButton()
+ public void Credito()
     {
         //Show Credits Menu
-        MainMenu.SetActive(false);
-        CreditsMenu.SetActive(true);
+        Creditos.SetActive(true);
+        Config.SetActive(false);
+        MenuPrincipal.SetActive(false);
     }
         
- public void QuitButton()
+ public void Sair()
     {
         //Quit Game
         //Application.Quit();
-        Debug.Log("Quit");
+        Debug.Log("Terminado");
     }
 }
