@@ -5,12 +5,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public GameObject bullet, spawnerBulletPos;
+ 
     //referencia rigidbody
     private Rigidbody2D rig;
 
+    //referencia para alterar o lado do sprite
+    private SpriteRenderer sprite;
+
+    //referencia para alterar as animacoes
+    private Animator anim;
+
+    //estados da animacao
+    private enum MovementState { idle, running, jumping, cai }
+
+    //verificacao se o player esta no chao
+    private BoxCollider2D coll;
+    [SerializeField] private LayerMask jumpableGround;
+
     //input horizontal
     private float Hor;
+
     //input de pulo
     private bool Jump;
     [SerializeField]
@@ -25,10 +39,17 @@ public class Player : MonoBehaviour
     //quais layers o raycast atinge
     private LayerMask layer_mask;
 
+    
+        
     private void Start()
     {
         //pega o componente do raycast
         rig = GetComponent<Rigidbody2D>();
+        //pega o componente BoxCollider
+        coll = GetComponent<BoxCollider2D>();
+        //Pega componentes para animar
+        sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -37,27 +58,25 @@ public class Player : MonoBehaviour
         //pega os inputs de movimento e pulo
         Hor = Input.GetAxis("Horizontal");
         //da pra usar Input.GetButtonDown("Jump")
-        if (Input.GetKeyDown(KeyCode.Space)) Jump = true;
-
-
-        //Chama a função de instanciar as bullets
-        SpawnBullet();
-        
-
-
+        if (Input.GetButtonDown("Jump") && IsGrounded()) Jump = true;
+        UpdateAnimationState();
+     
     }
 
     private void FixedUpdate()
     {
-
+       
         if (Hor != 0)
         {
             rig.velocity = new Vector2(Hor * speed, rig.velocity.y);
+           
         }
+
 
         //quando aperta o botao de pulo
         if (Jump == true)
         {
+            
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position - transform.up * Ray, Vector2.down, 1000, layer_mask);
             //desenha na tela pra fazer debugging
@@ -69,42 +88,65 @@ public class Player : MonoBehaviour
 
                 if (hit.distance < Dis)
                 {
+                    
                     //pulo
                     rig.AddForce(new Vector2(0, Jspeed), ForceMode2D.Impulse);
-                }
+                   
+                } 
             }
 
+           
             //reseta o input
             //no FixedUpdate() e nao no Update pra nao ser resetado antes do pulo acontecer
             Jump = false;
+           
         }
+
     }
 
-    private void SpawnBullet() {
-        //Instanciar a balla do estilingue de acordo com a posição do mouse
-        
-        //Pega a posição
-        /*
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        transform.up = direction;
-        */
-
-
-        
-        if(Input.GetMouseButtonDown(0)) {
-            //Instancia no mouse
-            Instantiate(bullet, spawnerBulletPos.transform.position, this.gameObject.transform.rotation);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+   private void UpdateAnimationState()
     {
-        if (collision.gameObject.layer == 8)
+        MovementState state;
+        //Update de animação
+
+        
+
+        //Update andar
+        if (Hor > 0f)
         {
-            Destroy(gameObject);
+            state = MovementState.running;
+            //Altera o lado do sprite de acordo com o seu movimento
+            sprite.flipX = true;
+
+        } else if (Hor < 0f)
+        {
+            state = MovementState.running;
+            sprite.flipX = false;
+           
+        } else
+        {
+            state = MovementState.idle;
+
         }
+
+        //Update Pulo
+        if (rig.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rig.velocity.y < -.1f)
+        {
+            Debug.Log("cai");
+            state = MovementState.cai;
+        }
+
+        anim.SetInteger("state", (int)state);
+        Debug.Log(state);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
 }
