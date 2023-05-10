@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14424321b42683347a58f0dbe7a37c90
+guid: 3d7519088a3f8a244b8f685fa009b5fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Joao_andando_0
+      name: Joao_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 21
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5141ec6d4742a0049b1d6856f85cb53f
-      internalID: 765800503
+      spriteID: 68d9f48aa14dbc34aab02f356a5ab13a
+      internalID: -2062485456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Joao_andando_1
+      name: Joao_idle_1
       rect:
         serializedVersion: 2
         x: 21
         y: 0
         width: 21
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a7bdf5b66124b4293cf06d66bee3f3
-      internalID: 991556066
+      spriteID: e6ce2f4c62bb7144099b8b0a359b4c62
+      internalID: 761413043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Joao_andando_2
+      name: Joao_idle_2
       rect:
         serializedVersion: 2
         x: 42
         y: 0
         width: 21
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b40ecb3b65f170458bc8f55a13cb345
-      internalID: 2044557637
+      spriteID: 265e946d00be6e943aa006da5b54e75e
+      internalID: -783495192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Joao_andando_3
+      name: Joao_idle_3
       rect:
         serializedVersion: 2
         x: 63
         y: 0
         width: 21
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9400609dc35a704a8e4530e102c7458
-      internalID: 722894039
+      spriteID: 9e7874bc5e57cb64794027196f2d1eaa
+      internalID: 1129236045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Joao_andando_4
+      name: Joao_idle_4
       rect:
         serializedVersion: 2
         x: 84
         y: 0
         width: 21
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51ef0765911a72e44bf6048100e2031b
-      internalID: 1907877548
+      spriteID: 3609061fc313a3b42b9fa00ff6604985
+      internalID: 1563349254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joao_idle_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667f2c514a6a4324086ecbae17d3af48
+      internalID: 973013483
       vertices: []
       indices: 
       edges: []
@@ -220,11 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Joao_andando_0: 765800503
-      Joao_andando_1: 991556066
-      Joao_andando_2: 2044557637
-      Joao_andando_3: 722894039
-      Joao_andando_4: 1907877548
+      Joao_idle_0: -2062485456
+      Joao_idle_1: 761413043
+      Joao_idle_2: -783495192
+      Joao_idle_3: 1129236045
+      Joao_idle_4: 1563349254
+      Joao_idle_5: 973013483
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

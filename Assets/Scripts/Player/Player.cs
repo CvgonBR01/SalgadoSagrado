@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 
     //referencia para o som
     [SerializeField] public AudioSource footstepsSound;
-    [SerializeField] private AudioSource walkSoundEffect;
     [SerializeField] private AudioSource jumpSoundEffect;
 
     //referencia rigidbody
@@ -155,12 +154,12 @@ public class Player : MonoBehaviour
         }
         else if (rig.velocity.y < -.1f)
         {
-            Debug.Log("cai");
+           
             state = MovementState.cai;
         }
 
         anim.SetInteger("state", (int)state);
-        Debug.Log(state);
+        
     }
 
     private bool IsGrounded()
