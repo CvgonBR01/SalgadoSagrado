@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player1 : MonoBehaviour
+{/*
 
  
     //referencia rigidbody
@@ -39,6 +39,12 @@ public class Player : MonoBehaviour
     //quais layers o raycast atinge
     private LayerMask layer_mask;
 
+    private Vector2 Respawn;
+    
+    //public GameObject dano;
+
+
+    
         
     private void Start()
     {
@@ -49,7 +55,7 @@ public class Player : MonoBehaviour
         //Pega componentes para animar
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        //Respawn = transform.position;
+        Respawn = transform.position;
     }
 
 
@@ -86,13 +92,13 @@ public class Player : MonoBehaviour
             if (hit.collider != null)
             {
 
-              if (hit.distance < Dis)
-             {
-                  
+                if (hit.distance < Dis)
+                {
+                    
                     //pulo
                     rig.AddForce(new Vector2(0, Jspeed), ForceMode2D.Impulse);
                    
-             } 
+                } 
             }
 
            
@@ -141,14 +147,23 @@ public class Player : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
-       // Debug.Log(state);
+        Debug.Log(state);
     }
 
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-   
-  
-
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.gameObject.tag == "Dano")
+        { 
+            transform.position = Respawn;
+        }
+        else if(coll.gameObject.tag == "check")
+        {
+            Respawn == transform.position;
+        }
+    }   
+*/
 }
