@@ -32,7 +32,7 @@ public class MenuScript : MonoBehaviour
   
  public void Jogar()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Carta");
          Debug.Log("LOAD");
     }
  public void Configuracoes()
@@ -53,7 +53,7 @@ public class MenuScript : MonoBehaviour
  public void Sair()
     {
         
-        //Application.Quit();
+        Application.Quit();
         Debug.Log("Terminado");
     }
 }
