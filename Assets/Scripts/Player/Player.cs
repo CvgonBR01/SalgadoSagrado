@@ -5,7 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
- 
+
+    //referencia para o som
+    [SerializeField] public AudioSource footstepsSound;
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     //referencia rigidbody
     private Rigidbody2D rig;
 
@@ -60,7 +64,19 @@ public class Player : MonoBehaviour
         //da pra usar Input.GetButtonDown("Jump")
         if (Input.GetButtonDown("Jump") && IsGrounded()) Jump = true;
         UpdateAnimationState();
-     
+        FootStepsSoundEffect();
+    }
+
+    private void FootStepsSoundEffect()
+    {
+        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) && IsGrounded())
+        {
+            footstepsSound.enabled = true;
+        }
+        else
+        {
+            footstepsSound.enabled = false;
+        }
     }
 
     private void FixedUpdate()
@@ -91,8 +107,9 @@ public class Player : MonoBehaviour
                   
                     //pulo
                     rig.AddForce(new Vector2(0, Jspeed), ForceMode2D.Impulse);
-                   
-             } 
+                    //Snd pulo
+                    jumpSoundEffect.Play();
+                } 
             }
 
            
@@ -117,12 +134,13 @@ public class Player : MonoBehaviour
             state = MovementState.running;
             //Altera o lado do sprite de acordo com o seu movimento
             sprite.flipX = true;
+           
 
         } else if (Hor < 0f)
         {
             state = MovementState.running;
             sprite.flipX = false;
-           
+          
         } else
         {
             state = MovementState.idle;
@@ -136,12 +154,12 @@ public class Player : MonoBehaviour
         }
         else if (rig.velocity.y < -.1f)
         {
-            Debug.Log("cai");
+           
             state = MovementState.cai;
         }
 
         anim.SetInteger("state", (int)state);
-       // Debug.Log(state);
+        
     }
 
     private bool IsGrounded()
