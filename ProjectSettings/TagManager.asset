@@ -45,9 +45,18 @@ TagManager:
   - name: Background
     uniqueID: 4270174431
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Sombra
+    uniqueID: 1821948053
+    locked: 0
+  - name: Cenario
+    uniqueID: 1978342301
     locked: 0
   - name: Terrain
     uniqueID: 4062787205
+    locked: 0
+  - name: Obstaculo
+    uniqueID: 400632679
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 174011828707091479}
   - component: {fileID: 174011828707091476}
   - component: {fileID: 4568872988370665320}
+  - component: {fileID: 559223626238363087}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 9
+  m_Mass: 0.6
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 2
@@ -362,15 +363,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d078925d2fdf740b56fbf1fbfe0aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsSound: {fileID: 0}
-  jumpSoundEffect: {fileID: 0}
+  footstepsSound: {fileID: 174011828707091476}
+  jumpSoundEffect: {fileID: 174011828707091479}
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
   speed: 5
-  Jspeed: 0.5
-  Ray: 0.5
-  Dis: 0.5
+  Jspeed: 5
+  Ray: 1
+  Dis: 1
   layer_mask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &559223626238363087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174011828707091477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f924944f1ff4e4ca47f4459ebc66db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

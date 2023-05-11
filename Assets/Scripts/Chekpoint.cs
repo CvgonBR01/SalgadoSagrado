@@ -7,8 +7,7 @@ public class Chekpoint : MonoBehaviour
     private Vector3 Respawn;
     
     //public Respawn pointupdate;
-    [SerializeField]
-    public bool updateCheckPoint = false; 
+    
 
     //public GameObject currentCheck;
     
