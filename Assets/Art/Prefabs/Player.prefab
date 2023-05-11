@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 174011828707091482}
   - component: {fileID: 174011828707091483}
   - component: {fileID: 174011828707091480}
-  - component: {fileID: 174011828707091481}
   - component: {fileID: 174011828707091478}
   - component: {fileID: 174011828707091479}
   - component: {fileID: 174011828707091476}
+  - component: {fileID: 4568872988370665320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -102,10 +102,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 9
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0.5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -137,30 +137,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5375794, y: 1.3503667}
   m_EdgeRadius: 0
---- !u!114 &174011828707091481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174011828707091477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb74e36208cd43d479d44872444ac4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepsSound: {fileID: 174011828707091476}
-  jumpSoundEffect: {fileID: 174011828707091479}
-  jumpableGround:
-    serializedVersion: 2
-    m_Bits: 8
-  speed: 5
-  Jspeed: 5
-  Ray: 1
-  Dis: 1
-  layer_mask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!95 &174011828707091478
 Animator:
   serializedVersion: 5
@@ -374,3 +350,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4568872988370665320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174011828707091477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d078925d2fdf740b56fbf1fbfe0aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepsSound: {fileID: 0}
+  jumpSoundEffect: {fileID: 0}
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 8
+  speed: 5
+  Jspeed: 0.5
+  Ray: 0.5
+  Dis: 0.5
+  layer_mask:
+    serializedVersion: 2
+    m_Bits: 8
