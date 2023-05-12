@@ -104,12 +104,13 @@ public class Player : MonoBehaviour
 
               if (hit.distance < Dis)
              {
-                  
+                    
                     //pulo
                     rig.AddForce(new Vector2(0, Jspeed), ForceMode2D.Impulse);
                     //Snd pulo
                     jumpSoundEffect.Play();
-                } 
+                }
+                //Debug.Log(hit.distance);
             }
 
            

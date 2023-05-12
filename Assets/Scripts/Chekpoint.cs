@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Chekpoint : MonoBehaviour
 {
-    private Vector3 Respawn;
-    
-    //public Respawn pointupdate;
-    
 
-    //public GameObject currentCheck;
+   
+
+    private Vector3 Respawn;
+
+    //public Respawn pointupdate;
+
+    [SerializeField] public AudioSource Reespawn;
     
+    //public GameObject currentCheck;
+
     //public GameObject dano;
 
     private BoxCollider2D coll;
@@ -31,10 +35,13 @@ public class Chekpoint : MonoBehaviour
         if(coll.gameObject.tag == "Dano")
         { 
             transform.position = Respawn;
+            Reespawn.Play();
         }
         else if(coll.gameObject.tag == "Check")
         {
             Respawn = transform.position;
+            
+            
         }
     }   
 }
