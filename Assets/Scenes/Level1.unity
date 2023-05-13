@@ -2694,7 +2694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7709355136647966810, guid: 262c4991540303d4d94fc26428e27bb4, type: 3}
       propertyPath: m_Volume
-      value: 0.17
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7709355136647966810, guid: 262c4991540303d4d94fc26428e27bb4, type: 3}
       propertyPath: m_audioClip
@@ -8921,8 +8921,9 @@ GameObject:
   - component: {fileID: 2073731237}
   - component: {fileID: 2073731236}
   - component: {fileID: 2073731235}
-  - component: {fileID: 2073731238}
   - component: {fileID: 2073731239}
+  - component: {fileID: 2073731241}
+  - component: {fileID: 2073731240}
   m_Layer: 0
   m_Name: CasaVo
   m_TagString: Untagged
@@ -8940,7 +8941,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09083557, y: -3.930505}
@@ -9023,19 +9024,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2073731238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073731234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5f9346a9401ef4fb0f6177e4b2b52c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FimSound: {fileID: 0}
 --- !u!82 &2073731239
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9046,7 +9034,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a09bca6bbb1c9b846b41ee56c489d6db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -9132,6 +9120,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2073731240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073731234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a04b393c277854096795d8bbb06482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishSound: {fileID: 2073731239}
+--- !u!61 &2073731241
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073731234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1710968, y: -3.9466453}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 13.1875, y: 11.1875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6213074, y: 2.8379498}
+  m_EdgeRadius: 0
 --- !u!1 &2095956394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6017884635357491290, guid: a5610f8c857a7214e92d8bfc6e6c65e1, type: 3}
