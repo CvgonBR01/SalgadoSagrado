@@ -8,8 +8,8 @@ public class MenuScript : MonoBehaviour
    [SerializeField]
     private GameObject MenuPrincipal;
 
-    //[SerializeField]
-    //private GameObject Config;
+    [SerializeField]
+    private GameObject Comandos;
     
     [SerializeField]
     private GameObject Creditos;
@@ -26,7 +26,7 @@ public class MenuScript : MonoBehaviour
     {
         
         MenuPrincipal.SetActive(true);
-        //Config.SetActive(false);
+        Comandos.SetActive(false);
         Creditos.SetActive(false);
     }
   
@@ -35,18 +35,20 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene("Carta");
          Debug.Log("LOAD");
     }
-/* public void Configuracoes()
- {
-        Config.SetActive(true);
-        MenuPrincipal.SetActive(false);
-        Creditos.SetActive(false);
- } */
+
   
  public void Credito()
     {
         
         Creditos.SetActive(true);
-        //Config.SetActive(false);
+        Comandos.SetActive(false);
+        MenuPrincipal.SetActive(false);
+    }
+
+    public void Comando()
+    {
+        Creditos.SetActive(false);
+        Comandos.SetActive(true);
         MenuPrincipal.SetActive(false);
     }
         
